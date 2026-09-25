@@ -102,15 +102,15 @@ public class SteadyStateBench {
             cursor = random.nextInt();
         }
 
+
+        //advances the cursor
         boolean isRead() {
-            return readMap[(int) (cursor & mask)];
+            return readMap[(int) (cursor++ & mask)];
         }
 
 
-        //xor shift cursor
-        //advances the cursor, should always be called before isRead
+        //xor shift
         int next() {
-            cursor++;
             xorState ^= xorState << 13; xorState ^= xorState >>> 7; xorState ^= xorState << 17;
             return (int) ((xorState >>> 20) & mask);
         }

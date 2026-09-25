@@ -62,7 +62,7 @@ Scores are means (in microseconds); per-cell error margins (mostly under 3%) are
 
 
 ## Running the benchmarks
-To run the benchmarks for yourself you need to be on JDK 25
+To run the benchmarks for yourself you need to be on JDK 28, though this can run on JDK 25
 
 ```bash
 mvn clean package
